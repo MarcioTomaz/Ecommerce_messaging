@@ -28,7 +28,10 @@ public class OrderKafkaConsumer {
             OrderLog log = new OrderLog();
             log.setOrderId(event.orderId());
             log.setStatus(event.status().name());
-            log.setUserLog(event.userLog());
+            // Só seta o refuseReason se vier preenchido
+            if (event.refuseReason() != null && !event.refuseReason().isBlank()) {
+                log.setRefuseReason(event.refuseReason());
+            }            log.setUserLog(event.userLog());
             log.setTimestamp(event.timestamp());
 
             repository.save(log); // Salva no MongoDB

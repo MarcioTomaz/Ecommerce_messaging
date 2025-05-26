@@ -1,7 +1,5 @@
 package com.example.ecommerce_messaging.model;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,6 +14,7 @@ public class OrderLog {
 
     private Long orderId;
     private String status;
+    private String refuseReason;
     private UserPersonLOG userLog;
     private Instant timestamp;
 
@@ -49,6 +48,14 @@ public class OrderLog {
 
     public void setTimestamp(Instant timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getRefuseReason() {
+        return refuseReason;
+    }
+
+    public void setRefuseReason(String refuseReason) {
+        this.refuseReason = refuseReason;
     }
 
     public UserPersonLOG getUserLog() {
