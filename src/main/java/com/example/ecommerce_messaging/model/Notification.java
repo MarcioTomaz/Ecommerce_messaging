@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 
-@Document(collection = "notifications")
+@Document(collection = "notification")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
