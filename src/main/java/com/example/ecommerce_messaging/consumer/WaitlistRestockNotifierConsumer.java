@@ -18,14 +18,14 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ProductStockUpdateConsumer {
+public class WaitlistRestockNotifierConsumer {
 
     private final ObjectMapper objectMapper;
     private final ProductAvailabilityRequestRepository productAvailabilityRequestRepository;
 
     private final NotificationProducerService notificationProducerService;
 
-    @KafkaListener(topics = "product.stock.update", groupId = "productStockUpdate-group")
+    @KafkaListener(topics = "waitlist.restock.notifier", groupId = "waitlistRestockNotifier-group")
     public void listen(String message) {
         try {
 
@@ -38,8 +38,8 @@ public class ProductStockUpdateConsumer {
                 Notification ntf = new Notification(
                         null,
                         event.userId(),
-                        "Product Stock Update",
-                        "Product Stock Update",
+                        "Product Restock Update",
+                        "Product Restock Update",
                         false,
                         NotificationType.StockUpdate,
                         pdt.getProductId(),

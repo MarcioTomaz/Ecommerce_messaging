@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 
-@Document("Product_Availability_Requests")
+@Document("product_Availability_Requests")
 @Data
 @Builder
 public class ProductAvailabilityRequest {
