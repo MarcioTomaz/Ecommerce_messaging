@@ -31,6 +31,7 @@ public class ProductAvailabilityRequestConsumer {
 
             ProductAvailabilityRequest product = ProductAvailabilityRequest.builder()
                     .productId(event.productId())
+                    .productName(event.product_name())
                     .userId(event.userId())
                     .timestamp(event.timestamp())
                     .build();

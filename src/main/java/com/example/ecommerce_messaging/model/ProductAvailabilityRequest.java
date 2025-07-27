@@ -17,5 +17,6 @@ public class ProductAvailabilityRequest {
 
     private Long userId;
     private Long productId;
+    private String productName;
     private Instant timestamp;
 }
